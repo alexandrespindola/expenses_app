@@ -20,9 +20,9 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Despesas pessoais'),
-          // actions:  ;
-        ),
+            title: const Text('Despesas pessoais'), actions: const <Widget>[
+              IconButton(onPressed: null, icon: Icon(Icons.abc))
+            ]),
         body: const SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

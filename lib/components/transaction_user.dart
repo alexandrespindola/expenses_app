@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'transaction_form.dart';
 import 'transaction_list.dart';
-import '../models/transaction.dart';
+import '../models/transaction.module.dart';
 
 class TransactionUser extends StatefulWidget {
   const TransactionUser({super.key});
