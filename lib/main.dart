@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import './components/transaction_form.dart';
-import './components/transaction_list.dart';
+import 'components/transaction_form.dart';
+import 'components/transaction_list.dart';
 import '../models/transaction.module.dart';
-import './theme/theme.dart';
+import 'theme/theme.dart';
+import 'screens/epub.dart';
 
 main() => runApp(const ExpensesApp());
 
@@ -13,7 +14,7 @@ class ExpensesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: const MyHomePage(),
-      theme: darkTheme(),
+      theme: lightTheme(),
     );
   }
 }
@@ -87,6 +88,15 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            ElevatedButton(
+              child: const Text('Go to Epub Screen'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const EpubScreen()),
+                );
+              },
+            ),
             SizedBox(
               width: double.infinity,
               child: Card(
