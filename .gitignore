@@ -1,0 +1,48 @@
+# Arquivos e diretórios criados pelo Flutter
+**/ios/Flutter/.last_build_id
+**/flutter_export_environment.sh
+
+# Arquivos e diretórios criados pelo pub
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+
+# Arquivos e diretórios criados pelo Dart sdk
+**/.dart_tool/
+**/.pub-cache/
+
+# Arquivos gerados pelo Xcode
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/flutter_assets/
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# Arquivos pessoais
+*.DS_Store
+*.idea/
+
+# Arquivos de log
+logs/
+*.log
+
+# Arquivos temporários
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+*.old
+*.sik
+
+# Arquivos de build
+**/build/
+
+# Arquivos de configuração local
+**/android/key.properties
