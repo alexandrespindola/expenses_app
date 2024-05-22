@@ -15,7 +15,7 @@ class _TransactionUserState extends State<TransactionUser> {
   final _transactions = [
     Transaction(
       id: 't1',
-      title: 'Novo tênis de corrida Nike',
+      title: 'Novoo tênis de corrida Nike',
       value: 310.76,
       date: DateTime.now(),
     ),
