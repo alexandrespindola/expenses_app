@@ -13,7 +13,7 @@ ThemeData lightTheme() {
     ),
     textTheme: base.textTheme.copyWith(
       titleLarge: base.textTheme.titleLarge!.copyWith(
-        fontFamily: 'Ubuntu',
+        fontFamily: 'Arial',
         fontSize: 20,
         fontWeight: FontWeight.bold,
         color: Colors.black,
@@ -24,8 +24,6 @@ ThemeData lightTheme() {
     ),
     appBarTheme: const AppBarTheme(
       titleTextStyle: TextStyle(
-        fontFamily: 'Ubuntu',
-        fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
     ),

@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: const Icon(Icons.add),
             color: Colors.white,
             tooltip: 'Add new transaction',
-          )
+          ),
         ],
         backgroundColor: Theme.of(context).colorScheme.primary,
         centerTitle: false,
@@ -101,7 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _openTransactionFormModal(context),
-        backgroundColor: Theme.of(context).floatingActionButtonTheme.backgroundColor,
+        backgroundColor:
+            Theme.of(context).floatingActionButtonTheme.backgroundColor,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(50.0))),
         child: const Icon(Icons.add, color: Colors.white),
