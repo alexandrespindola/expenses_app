@@ -51,9 +51,9 @@ class _TransactionFormState extends State<TransactionForm> {
             children: <Widget>[
               TextButton(
                 onPressed: _submitForm,
-                style: TextButton.styleFrom(backgroundColor: Colors.grey[50]),
+                style: TextButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.primary),
                 child: const Text('Nova transação',
-                    style: TextStyle(color: Colors.purple)),
+                    style: TextStyle(color: Colors.white)),
               ),
             ],
           )

@@ -1,7 +1,8 @@
-import 'package:expenses/components/transaction_form.dart';
 import 'package:flutter/material.dart';
+import './components/transaction_form.dart';
 import './components/transaction_list.dart';
 import '../models/transaction.module.dart';
+import './theme/theme.dart';
 
 main() => runApp(const ExpensesApp());
 
@@ -11,12 +12,15 @@ class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHomePage(),
+      home: const MyHomePage(),
+      theme: darkTheme(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -48,6 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _transactions.add(newTransaction);
     });
+
+    Navigator.of(context).pop();
   }
 
   _openTransactionFormModal(BuildContext context) {
@@ -62,30 +68,31 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Despesas pessoais'),
+        title: Text(
+          'Despesas pessoais',
+          style: Theme.of(context).appBarTheme.titleTextStyle,
+        ),
         actions: <Widget>[
           IconButton(
             onPressed: () => _openTransactionFormModal(context),
             icon: const Icon(Icons.add),
             color: Colors.white,
-            highlightColor: Colors.purple.shade200,
             tooltip: 'Add new transaction',
           )
         ],
-        backgroundColor: Colors.purple.shade800,
-        centerTitle: true,
-        foregroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        centerTitle: false,
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            const SizedBox(
+            SizedBox(
               width: double.infinity,
               child: Card(
-                color: Colors.blue,
+                color: Theme.of(context).colorScheme.primary,
                 elevation: 5,
-                child: Text('Gráfico'),
+                child: const Text('Gráfico'),
               ),
             ),
             TransactionList(_transactions),
@@ -94,8 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _openTransactionFormModal(context),
-        backgroundColor: Colors.purple.shade300,
-        splashColor: Colors.purple.shade700,
+        backgroundColor: Theme.of(context).floatingActionButtonTheme.backgroundColor,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(50.0))),
         child: const Icon(Icons.add, color: Colors.white),
