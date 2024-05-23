@@ -3,7 +3,6 @@ import 'components/transaction_form.dart';
 import 'components/transaction_list.dart';
 import '../models/transaction.module.dart';
 import 'theme/theme.dart';
-import 'screens/epub.dart';
 
 main() => runApp(const ExpensesApp());
 
@@ -14,6 +13,7 @@ class ExpensesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: const MyHomePage(),
+      // theme: darkTheme(),
       theme: lightTheme(),
     );
   }
@@ -27,19 +27,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _transactions = [
-    Transaction(
-      id: 't1',
-      title: 'Novo tênis de corrida Nike',
-      value: 310.76,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Conta de luz',
-      value: 211.30,
-      date: DateTime.now(),
-    ),
+  final List<Transaction> _transactions = [
+    // Transaction(
+    //   id: 't1',
+    //   title: 'Novo tênis de corrida Nike',
+    //   value: 310.76,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: 'Conta de luz',
+    //   value: 211.30,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   _addTransaction(String title, double value) {
@@ -88,21 +88,22 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(
-              child: const Text('Go to Epub Screen'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const EpubScreen()),
-                );
-              },
-            ),
             SizedBox(
               width: double.infinity,
               child: Card(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.secondary,
                 elevation: 5,
-                child: const Text('Gráfico'),
+                margin: const EdgeInsets.all(20),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    'Gráfico',
+                    style: TextStyle(
+                      color: Theme.of(context).textTheme.titleLarge!.color,
+                      fontSize: Theme.of(context).textTheme.titleLarge!.fontSize,
+                    ),
+                  ),
+                ),
               ),
             ),
             TransactionList(_transactions),
