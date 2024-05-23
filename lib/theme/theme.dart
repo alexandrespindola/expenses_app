@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 Color primary = Colors.green;
 Color secondary = Colors.amber;
 
-ThemeData lightTheme() {
-  final ThemeData base = ThemeData.light();
+ThemeData buildTheme(
+    ThemeData base, Color primary, Color secondary, Color textColor) {
   return base.copyWith(
     colorScheme: base.colorScheme.copyWith(
       primary: primary,
@@ -18,7 +18,12 @@ ThemeData lightTheme() {
           titleLarge: base.textTheme.titleLarge!.copyWith(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Colors.black,
+            color: textColor,
+          ),
+          titleMedium: base.textTheme.titleMedium!.copyWith(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: textColor,
           ),
         ),
     floatingActionButtonTheme: base.floatingActionButtonTheme.copyWith(
@@ -33,6 +38,11 @@ ThemeData lightTheme() {
   );
 }
 
+ThemeData lightTheme() {
+  final ThemeData base = ThemeData.light();
+  return buildTheme(base, primary, secondary, Colors.black);
+}
+
 ThemeData darkTheme() {
   // Compute "opposite" colors for dark theme
   Color darkPrimary = HSLColor.fromColor(primary)
@@ -43,31 +53,5 @@ ThemeData darkTheme() {
       .toColor();
 
   final ThemeData base = ThemeData.dark();
-  return base.copyWith(
-    colorScheme: base.colorScheme.copyWith(
-      primary: darkPrimary,
-      secondary: darkSecondary,
-    ),
-    textTheme: base.textTheme
-        .apply(
-          fontFamily: 'Nunito',
-        )
-        .copyWith(
-          titleLarge: base.textTheme.titleLarge!.copyWith(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-    floatingActionButtonTheme: base.floatingActionButtonTheme.copyWith(
-      backgroundColor: darkSecondary,
-    ),
-    appBarTheme: const AppBarTheme(
-      titleTextStyle: TextStyle(
-        fontFamily: 'Nunito',
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-  );
+  return buildTheme(base, darkPrimary, darkSecondary, Colors.white);
 }
