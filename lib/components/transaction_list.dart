@@ -19,6 +19,7 @@ class TransactionList extends StatelessWidget {
                   'Nenhuma transação cadastrada!',
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       color: Theme.of(context).colorScheme.primary,
+                      fontFamily: 'Nunito',
                       fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 30),
