@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-// import 'package:intl/intl.dart';
 import 'components/chart.dart';
 import 'components/transaction_form.dart';
 import 'components/transaction_list.dart';
 import '../models/transaction.module.dart';
 import 'theme/theme.dart';
-
 
 main() => runApp(const ExpensesApp());
 
