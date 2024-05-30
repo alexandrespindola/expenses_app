@@ -33,21 +33,21 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _transactions = [
     Transaction(
       id: 't0',
-      title: 'Conta antiga',
-      value: 400.00,
-      date: DateTime.now().subtract(const Duration(days: 33)),
+      title: 'Conta água',
+      value: 100.00,
+      date: DateTime.now().subtract(const Duration(days: 3)),
     ),
     Transaction(
       id: 't1',
       title: 'Novo tênis de corrida Nike',
       value: 310.76,
-      date: DateTime.now().subtract(const Duration(days: 3)),
+      date: DateTime.now().subtract(const Duration(days: 4)),
     ),
     Transaction(
       id: 't2',
       title: 'Conta de luz',
       value: 211.30,
-      date: DateTime.now().subtract(const Duration(days: 4)),
+      date: DateTime.now().subtract(const Duration(days: 5)),
     ),
   ];
 
@@ -105,25 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            // SizedBox(
-            //   width: double.infinity,
-            //   child: Card(
-            //     color: Theme.of(context).colorScheme.secondary,
-            //     elevation: 5,
-            //     margin: const EdgeInsets.all(20),
-            //     child: Padding(
-            //       padding: const EdgeInsets.all(10.0),
-            //       child: Text(
-            //         'Gráfico',
-            //         style: TextStyle(
-            //           color: Theme.of(context).textTheme.titleLarge!.color,
-            //           fontSize:
-            //               Theme.of(context).textTheme.titleLarge!.fontSize,
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // ),
             Chart(_recentTransactions),
             TransactionList(_transactions),
           ],
